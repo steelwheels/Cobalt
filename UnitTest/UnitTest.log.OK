@@ -1,0 +1,15 @@
+--------------------------------------------------------------------------------
+* CNArgument
+--------------------------------------------------------------------------------
+argumentTest : count 1
+(normal: "hello")
+argumentTest : count 3
+(long-name-opt: "help")
+(short-name-opt: "v")
+(normal: "file")
+argumentTest : count 4
+(long-name-opt: "verbose")
+(short-name-opt: "a")
+(short-name-opt: "b")
+(short-name-opt: "o")
+(normal: "file")
