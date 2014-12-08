@@ -34,7 +34,7 @@ UTArgumentTest(void)
 	  const char * argv1[] = {
 		"--verbose",
 		"-ab",
-		"-o",
+		"-o./ofile",
 		"file"
 	  } ;
 	  argumentTest(ARGNUM(argv1), argv1) ;
@@ -46,18 +46,11 @@ argumentTest(NSUInteger count, const char ** argv)
 {
 	printf("%s : count %u\n", __func__, (unsigned int) count) ;
 	
-	CNList *	arglist ;
-	CBError *	error ;
-	error = [CBArgument parseArguments: argv withCount: count into: &arglist] ;
-	if(error == nil){
-		const struct CNListItem * item ;
-		for(item = [arglist firstItem] ; item ; item = item->nextItem){
-			CBArgument * arg = (CBArgument *) CNObjectInListItem(item) ;
-			UTPrintArgument(arg) ;
-		}
-	} else {
-		NSString * msg = [error toString] ;
-		printf("[Error] %s\n", [msg UTF8String]) ;
+	CNList * arglist = [CBArgument parseArguments: argv withCount: count] ;
+	const struct CNListItem * item ;
+	for(item = [arglist firstItem] ; item ; item = item->nextItem){
+		CBArgument * arg = (CBArgument *) CNObjectInListItem(item) ;
+		UTPrintArgument(arg) ;
 	}
 }
 

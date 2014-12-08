@@ -7,21 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CBErrorOperating <NSObject>
-- (NSString *) toString ;
+@interface CBError : NSObject
+@property (strong, nonatomic) NSString * message ;
+- (instancetype) initWithMessage: (NSString *) message ;
 @end
 
 
-@interface CBError : NSObject <CBErrorOperating>
-- (instancetype) init ;
-@end
 
-@interface CBUnknownShortNameOptionError : CBError <CBErrorOperating>
-{
-	unsigned char		unknownShortOptionName ;
-}
-- (instancetype) initWithUnknownShortName: (unsigned char) c ;
-
-@end
 
 

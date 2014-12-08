@@ -12,4 +12,5 @@ argumentTest : count 4
 (short-name-opt: "a")
 (short-name-opt: "b")
 (short-name-opt: "o")
+(normal: "./ofile")
 (normal: "file")

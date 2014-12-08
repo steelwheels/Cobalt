@@ -9,35 +9,14 @@
 #import "CBError.h"
 
 @implementation CBError
-- (instancetype) init
+
+- (instancetype) initWithMessage: (NSString *) message
 {
 	if((self = [super init]) != nil){
-		
+		self.message = message ;
 	}
 	return self ;
 }
 
-- (NSString *) toString
-{
-	assert(false) ;
-	return @"" ;
-}
-
 @end
 
-@implementation CBUnknownShortNameOptionError
-
-- (instancetype) initWithUnknownShortName: (unsigned char) c
-{
-	if((self = [super init]) != nil){
-		unknownShortOptionName = c ;
-	}
-	return self ;
-}
-
-- (NSString *) toString
-{
-	return [[NSString alloc] initWithFormat: @"Unknown short name option \"%c\"", unknownShortOptionName] ;
-}
-
-@end

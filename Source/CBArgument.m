@@ -9,21 +9,18 @@
 #import "CBError.h"
 #import <Coconut/Coconut.h>
 
-static CBError *
+static void
 parseOneArgument(CNList * dst, const char * arg) ;
 
 @implementation CBArgument
 
-+ (CBError *) parseArguments: (const char **) argv withCount: (NSUInteger) count into: (CNList **) dstlist
++ (CNList *) parseArguments: (const char **) argv withCount: (NSUInteger) count
 {
-	*dstlist = [[CNList alloc] init] ;
+	CNList * newlist = [[CNList alloc] init] ;
 	for(NSUInteger i=0 ; i<count ; i++){
-		CBError * error ;
-		if((error = parseOneArgument(*dstlist, argv[i])) != nil){
-			return error ;
-		}
+		parseOneArgument(newlist, argv[i]) ;
 	}
-	return nil;
+	return newlist ;
 }
 
 - (instancetype) initWithType: (CBArgumentType) type withValue: (NSString *) value
@@ -45,36 +42,36 @@ addOneArgument(CNList * dst, CBArgumentType type, const char * str)
 	[dst addObject: newarg] ;
 }
 
-static CBError *
+static void
 parseOneArgument(CNList * dst, const char * arg)
 {
 	if(arg[0] == '-'){
 		if(arg[1] == '-'){
-			if(isalnum(arg[2])){
-				/* Long name option */
-				addOneArgument(dst, CBLongNameOptionArgument, &(arg[2])) ;
-			} else if(arg[2] != '\0'){
-				/* Normal option */
+			if(arg[2] == '\0'){
+				/* '--' is treated as normal option */
 				addOneArgument(dst, CBNormalArgument, arg) ;
 			} else {
-				addOneArgument(dst, CBNormalArgument, arg) ;
+				/* Long name option */
+				addOneArgument(dst, CBLongNameOptionArgument, &(arg[2])) ;
 			}
 		} else {
 			NSUInteger i ;
 			char c ;
 			/* Short name options */
 			for(i=1 ; (c = arg[i]) != '\0' ; i++){
-				if(isalnum(c)){
+				if(isalpha(c)){
 					char str[] = {c, '\0'} ;
 					addOneArgument(dst, CBShortNameOptionArgument, str) ;
 				} else {
-					return [[CBUnknownShortNameOptionError alloc] initWithUnknownShortName: c] ;
+					break ;
 				}
+			}
+			if(arg[i] != '\0'){
+				addOneArgument(dst, CBNormalArgument, &(arg[i])) ;
 			}
 		}
 	} else {
 		/* Normal option */
 		addOneArgument(dst, CBNormalArgument, arg) ;
 	}
-	return nil ;
 }
