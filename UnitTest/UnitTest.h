@@ -8,7 +8,7 @@
 #import <Cobalt/Cobalt.h>
 
 void UTArgumentTest(void) ;
-void UTOptionFormatTest(void) ;
+void UTOptionDefinitionTest(void) ;
 
 void UTPrintArgument(CBArgument * src) ;
 

@@ -11,8 +11,8 @@ static void printTestName(const char * name) ;
 
 int main(int argc, const char * argv[]) {
 	@autoreleasepool {
-		printTestName("CNArgument") ;		UTArgumentTest() ;
-		printTestName("CNOptionFormat") ;	UTOptionFormatTest() ;
+		printTestName("CBArgument") ;		UTArgumentTest() ;
+		printTestName("CBOptionDefinition") ;	UTOptionDefinitionTest() ;
 	}
     return 0;
 }

@@ -1,6 +1,6 @@
 /**
- * @file	CBOptionFormat.h
- * @brief	Define CBOptionFormat class
+ * @file	CBOptionDefinition.h
+ * @brief	Define CBOptionDefinition class
  * @par Copyright
  *   Copyright (C) 2014 Steel Wheels Project
  */
@@ -21,14 +21,12 @@ static const NSUInteger		CBNilOptionId = (NSUInteger) -1 ;
 
 #define CBEndOfOptionDefinition	{CBNilOptionId, '\0', NULL, CNNilValue, NULL, NULL}
 
-@interface CBOptionFormat : NSObject
+static inline BOOL
+CBIsEndOfOptionDefinition(const struct CBOptionDefinition * src)
+{
+	return src->optionId == CBNilOptionId ;
+}
 
-@property (assign, nonatomic) struct CBOptionDefinition	optionDefinition ;
+void
+CBPrintOptionDefinition(FILE * outfp, const struct CBOptionDefinition * src) ;
 
-+ (CNList *) generateOptionFormats: (const struct CBOptionDefinition *) optdefs ;
-
-- (instancetype) initWithOptionDefinition: (const struct CBOptionDefinition *) optdef ;
-
-- (void) printToFile: (FILE *) outfp ;
-
-@end
