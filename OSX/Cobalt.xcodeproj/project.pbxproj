@@ -12,13 +12,14 @@
 		0505B2221A341D50002C5B84 /* CBArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B21C1A341D50002C5B84 /* CBArgument.m */; };
 		0505B2231A341D50002C5B84 /* CBCommandLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B21D1A341D50002C5B84 /* CBCommandLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0505B2241A341D50002C5B84 /* CBCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B21E1A341D50002C5B84 /* CBCommandLine.m */; };
-		0505B2251A341D50002C5B84 /* CBParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B21F1A341D50002C5B84 /* CBParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0505B2261A341D50002C5B84 /* CBParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B2201A341D50002C5B84 /* CBParameter.m */; };
+		0505B2251A341D50002C5B84 /* CBOptionFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B21F1A341D50002C5B84 /* CBOptionFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0505B2261A341D50002C5B84 /* CBOptionFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B2201A341D50002C5B84 /* CBOptionFormat.m */; };
 		0505B2281A346AF7002C5B84 /* CBForwarders.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B2271A346AF7002C5B84 /* CBForwarders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0505B22B1A346D7F002C5B84 /* CBError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B22A1A346D7F002C5B84 /* CBError.m */; };
 		0505B22D1A346D9B002C5B84 /* CBError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B22C1A346D9B002C5B84 /* CBError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0505B23C1A3478EF002C5B84 /* UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B23B1A3478EF002C5B84 /* UnitTest.m */; };
 		0505B2441A347926002C5B84 /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0505B2431A347926002C5B84 /* Cobalt.framework */; };
+		059D14241A37422A00EFAC6A /* UTOptionFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 059D14231A37422A00EFAC6A /* UTOptionFormat.m */; };
 		05D5DB721A347AA000184D99 /* UTArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D5DB711A347AA000184D99 /* UTArgument.m */; };
 		05D5DB731A34843A00184D99 /* Cobalt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B2291A346B10002C5B84 /* Cobalt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -65,8 +66,8 @@
 		0505B21C1A341D50002C5B84 /* CBArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBArgument.m; path = ../Source/CBArgument.m; sourceTree = "<group>"; };
 		0505B21D1A341D50002C5B84 /* CBCommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBCommandLine.h; path = ../Source/CBCommandLine.h; sourceTree = "<group>"; };
 		0505B21E1A341D50002C5B84 /* CBCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBCommandLine.m; path = ../Source/CBCommandLine.m; sourceTree = "<group>"; };
-		0505B21F1A341D50002C5B84 /* CBParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBParameter.h; path = ../Source/CBParameter.h; sourceTree = "<group>"; };
-		0505B2201A341D50002C5B84 /* CBParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBParameter.m; path = ../Source/CBParameter.m; sourceTree = "<group>"; };
+		0505B21F1A341D50002C5B84 /* CBOptionFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBOptionFormat.h; path = ../Source/CBOptionFormat.h; sourceTree = "<group>"; };
+		0505B2201A341D50002C5B84 /* CBOptionFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBOptionFormat.m; path = ../Source/CBOptionFormat.m; sourceTree = "<group>"; };
 		0505B2271A346AF7002C5B84 /* CBForwarders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBForwarders.h; path = ../Source/CBForwarders.h; sourceTree = "<group>"; };
 		0505B2291A346B10002C5B84 /* Cobalt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cobalt.h; path = ../Source/Cobalt.h; sourceTree = "<group>"; };
 		0505B22A1A346D7F002C5B84 /* CBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBError.m; path = ../Source/CBError.m; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		0505B2431A347926002C5B84 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = /Users/tomoo/Library/Frameworks/Cobalt.framework; sourceTree = "<absolute>"; };
 		058F21F01A341BCE00D7B2D1 /* Cobalt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cobalt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		058F21F41A341BCE00D7B2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		059D14231A37422A00EFAC6A /* UTOptionFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UTOptionFormat.m; path = ../UnitTest/UTOptionFormat.m; sourceTree = SOURCE_ROOT; };
 		05D5DB701A34799600184D99 /* UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitTest.h; path = ../UnitTest/UnitTest.h; sourceTree = SOURCE_ROOT; };
 		05D5DB711A347AA000184D99 /* UTArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UTArgument.m; path = ../UnitTest/UTArgument.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -108,8 +110,8 @@
 				0505B2271A346AF7002C5B84 /* CBForwarders.h */,
 				0505B21D1A341D50002C5B84 /* CBCommandLine.h */,
 				0505B21E1A341D50002C5B84 /* CBCommandLine.m */,
-				0505B21F1A341D50002C5B84 /* CBParameter.h */,
-				0505B2201A341D50002C5B84 /* CBParameter.m */,
+				0505B21F1A341D50002C5B84 /* CBOptionFormat.h */,
+				0505B2201A341D50002C5B84 /* CBOptionFormat.m */,
 				0505B21B1A341D50002C5B84 /* CBArgument.h */,
 				0505B21C1A341D50002C5B84 /* CBArgument.m */,
 				0505B22C1A346D9B002C5B84 /* CBError.h */,
@@ -124,6 +126,7 @@
 				05D5DB701A34799600184D99 /* UnitTest.h */,
 				0505B23B1A3478EF002C5B84 /* UnitTest.m */,
 				05D5DB711A347AA000184D99 /* UTArgument.m */,
+				059D14231A37422A00EFAC6A /* UTOptionFormat.m */,
 				0505B2421A34790C002C5B84 /* Supporting Files */,
 			);
 			path = UnitTest;
@@ -185,7 +188,7 @@
 				0505B2281A346AF7002C5B84 /* CBForwarders.h in Headers */,
 				0505B2211A341D50002C5B84 /* CBArgument.h in Headers */,
 				0505B2231A341D50002C5B84 /* CBCommandLine.h in Headers */,
-				0505B2251A341D50002C5B84 /* CBParameter.h in Headers */,
+				0505B2251A341D50002C5B84 /* CBOptionFormat.h in Headers */,
 				0505B22D1A346D9B002C5B84 /* CBError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +325,7 @@
 			files = (
 				0505B23C1A3478EF002C5B84 /* UnitTest.m in Sources */,
 				05D5DB721A347AA000184D99 /* UTArgument.m in Sources */,
+				059D14241A37422A00EFAC6A /* UTOptionFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +335,7 @@
 			files = (
 				0505B2241A341D50002C5B84 /* CBCommandLine.m in Sources */,
 				0505B2221A341D50002C5B84 /* CBArgument.m in Sources */,
-				0505B2261A341D50002C5B84 /* CBParameter.m in Sources */,
+				0505B2261A341D50002C5B84 /* CBOptionFormat.m in Sources */,
 				0505B22B1A346D7F002C5B84 /* CBError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,11 +506,16 @@
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
+				WARNING_CFLAGS = (
+					"-W",
+					"-Wall",
+				);
 			};
 			name = Debug;
 		};
@@ -524,11 +533,16 @@
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
+				WARNING_CFLAGS = (
+					"-W",
+					"-Wall",
+				);
 			};
 			name = Release;
 		};
@@ -603,6 +617,7 @@
 				05B9A78A1A360C6D00B4D01F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

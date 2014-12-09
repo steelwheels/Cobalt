@@ -6,6 +6,6 @@
  */
 
 #import "CBCommandLine.h"
-#import "CBParameter.h"
+#import "CBOptionFormat.h"
 #import "CBArgument.h"
 #import "CBError.h"
