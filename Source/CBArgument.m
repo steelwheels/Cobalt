@@ -22,6 +22,17 @@ parseOneArgument(CNList * dst, const char * arg) ;
 	return newlist ;
 }
 
++ (NSString *) argumentTypeDescription: (CBArgumentType) type
+{
+	NSString * result = @"?" ;
+	switch(type){
+		case CBNormalArgument:		result = @"normal" ;		break ;
+		case CBLongNameOptionArgument:	result = @"long-option" ;	break ;
+		case CBShortNameOptionArgument:	result = @"short-option" ;	break ;
+	}
+	return result ;
+}
+
 - (instancetype) initWithType: (CBArgumentType) type withValue: (NSString *) value
 {
 	if((self = [super init]) != nil){
@@ -29,6 +40,17 @@ parseOneArgument(CNList * dst, const char * arg) ;
 		self.value = value ;
 	}
 	return self ;
+}
+
+- (NSString *) description
+{
+	NSString * result = [CBArgument argumentTypeDescription: self.type] ;
+	if(self.value){
+		result = [result stringByAppendingString: @" : \""] ;
+		result = [result stringByAppendingString: [self.value description]] ;
+		result = [result stringByAppendingString: @"\""] ;
+	}
+	return result ;
 }
 
 @end

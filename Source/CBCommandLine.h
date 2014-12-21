@@ -18,6 +18,8 @@
 - (instancetype) init ;
 
 - (CBOption *) searchOptionById: (NSUInteger) optionid ;
+- (const struct CNListItem *) firstArgument ;
+
 - (CNText *) toText ;
 
 + (CBCommandLine *) parseArguments: (const char **) argv

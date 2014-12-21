@@ -10,6 +10,8 @@
 #import "CBOption.h"
 #import "CBOptionDefinition.h"
 
+static const BOOL LOCAL_DEBUG = false ;
+
 static NSError *
 parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, const struct CBOptionDefinition * optdefs) ;
 
@@ -37,6 +39,11 @@ parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, c
 		}
 	}
 	return nil ;
+}
+
+- (const struct CNListItem *) firstArgument
+{
+	return [self.commandLineArguments firstItem] ;
 }
 
 - (CNText *) toText
@@ -100,6 +107,10 @@ static NSError *
 parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, const struct CBOptionDefinition * optdefs)
 {
 	NSError * error = nil ;
+	if(LOCAL_DEBUG){
+		NSString * argstr = [arg description] ;
+		printf("ARG: %s\n", [argstr UTF8String]) ;
+	}
 	switch(arg.type){
 		case CBNormalArgument: {
 			[cmdline.commandLineArguments addObject: arg.value] ;
@@ -138,7 +149,7 @@ searchShortOptionDefinition(const struct CBOptionDefinition * optdefs, NSString 
 	} else {
 		return NULL ;
 	}
-	for( ; CBIsEndOfOptionDefinition(optdefs) ; optdefs++){
+	for( ; !CBIsEndOfOptionDefinition(optdefs) ; optdefs++){
 		if(optdefs->shortName == optchar){
 			return optdefs ;
 		}
@@ -149,7 +160,7 @@ searchShortOptionDefinition(const struct CBOptionDefinition * optdefs, NSString 
 static const struct CBOptionDefinition *
 searchLongOptionDefinition(const struct CBOptionDefinition * optdefs, NSString * optname)
 {
-	for( ; CBIsEndOfOptionDefinition(optdefs) ; optdefs++){
+	for( ; !CBIsEndOfOptionDefinition(optdefs) ; optdefs++){
 		if(optdefs->longName != NULL && strcmp(optdefs->longName, [optname UTF8String]) == 0){
 			return optdefs ;
 		}

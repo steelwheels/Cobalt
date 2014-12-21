@@ -18,5 +18,37 @@ argumentTest : count 4
 * CBOptionDefinition
 --------------------------------------------------------------------------------
 --opt1 -s : sample option 1
---opt2 size : sample option 2
--a bool : sample option 3
+--opt2 size: sample option 2
+-a bool: sample option 3
+--------------------------------------------------------------------------------
+* CBCommandLine
+--------------------------------------------------------------------------------
+-- parseArguments: OK
+-- print command line info
+CommandLine
+    Options:
+    Arguments:
+      hello
+-- Check option id 0
+ -> No such option
+-- Check option id 1
+ -> No such option
+-- Check option id 2
+ -> No such option
+-- print argument
+hello
+-- parseArguments: OK
+-- print command line info
+CommandLine
+    Options:
+          Option definition
+            --opt1 -s : sample option 1
+    Arguments:
+-- Check option id 0
+ -> Found without argument
+-- Check option id 1
+ -> No such option
+-- Check option id 2
+ -> No such option
+-- print argument
+

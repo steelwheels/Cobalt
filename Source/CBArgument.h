@@ -20,7 +20,9 @@ typedef enum {
 @property (strong, nonatomic) NSString *	value ;
 
 + (CNList *) parseArguments: (const char **) argv withCount: (NSUInteger) count ;
+
 - (instancetype) initWithType: (CBArgumentType) type withValue: (NSString *) value ;
+- (NSString *) description ;
 
 @end
 
