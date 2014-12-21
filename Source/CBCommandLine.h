@@ -6,15 +6,23 @@
  */
 
 #import <Coconut/Coconut.h>
-
-typedef struct  {
-	NSUInteger		optionId ;
-	const char *		optionName ;
-	CNValueType		valueType ;
-} CBCommandLineOptionFormat ;
-
-#define KDEndOfCommandLineOptionFormat	{0, NULL, KDNilValue}
+#import "CBForwarders.h"
 
 @interface CBCommandLine : NSObject
+
+/** List of CBOption */
+@property (strong, nonatomic) CNList *	commandLineOptions ;
+/** List of NSString */
+@property (strong, nonatomic) CNList *  commandLineArguments ;
+
+- (instancetype) init ;
+
+- (CBOption *) searchOptionById: (NSUInteger) optionid ;
+- (CNText *) toText ;
+
++ (CBCommandLine *) parseArguments: (const char **) argv
+			withCounts: (NSUInteger) counts
+	     withOptionDefinitions: (const struct CBOptionDefinition *) defs
+			 withError: (NSError * __autoreleasing *) error ;
 
 @end

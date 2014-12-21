@@ -7,21 +7,38 @@
 
 #import "CBOptionDefinition.h"
 
-void
-CBPrintOptionDefinition(FILE * outfp, const struct CBOptionDefinition * src)
+static inline NSString *
+appendString(NSString * basestr, NSString * addstr)
 {
+	NSString * result ;
+	if(basestr){
+		result = [basestr stringByAppendingString: addstr] ;
+	} else {
+		result = addstr ;
+	}
+	return result;
+}
+
+CNText *
+CBOptionDefinitionToString(const struct CBOptionDefinition * src)
+{
+	NSString *	result = nil ;
 	if(src->longName != NULL){
-		fprintf(outfp, "--%s ", src->longName) ;
+		result = [[NSString alloc] initWithFormat: @"--%s ", src->longName] ;
 	}
 	if(src->shortName != '\0'){
-		fprintf(outfp, "-%c ", src->shortName) ;
+		NSString * shortstr = [[NSString alloc] initWithFormat: @"-%c ", src->shortName] ;
+		result = appendString(result, shortstr) ;
 	}
 	if(src->valueDescription != NULL){
-		fprintf(outfp, "%s ", src->valueDescription) ;
+		NSString * valstr = [[NSString alloc] initWithUTF8String: src->valueDescription] ;
+		result = appendString(result, valstr) ;
 	}
-	if(src->optionDescription){
-		fprintf(outfp, ": %s", src->optionDescription) ;
+	if(src->optionDescription != NULL){
+		NSString * optstr = [[NSString alloc] initWithFormat: @": %s", src->optionDescription] ;
+		result = appendString(result, optstr) ;
 	}
-	fputs("\n", outfp) ;
+	return [[CNTextLine alloc] initWithString: result] ;
 }
+
 

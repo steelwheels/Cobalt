@@ -6,7 +6,6 @@
  */
 
 #import "CBArgument.h"
-#import "CBError.h"
 #import <Coconut/Coconut.h>
 
 static void

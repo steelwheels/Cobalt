@@ -1,5 +1,5 @@
 /**
- * @file	UTOptionDefinition
+ * @file	UTOptionDefinition.m
  * @brief	UnitTest for CBOptionDefinition class in Cobalt Framework
  * @par Copyright
  *   Copyright (C) 2014 Steel Wheels Project
@@ -19,6 +19,7 @@ UTOptionDefinitionTest(void)
 {
 	const struct CBOptionDefinition * defs = s_optdefs ;
 	for( ; !CBIsEndOfOptionDefinition(defs) ; defs++){
-		CBPrintOptionDefinition(stdout, defs) ;
+		CNText * text = CBOptionDefinitionToString(defs) ;
+		[text printToFile: stdout] ;
 	}
 }

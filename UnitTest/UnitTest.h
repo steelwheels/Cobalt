@@ -9,6 +9,7 @@
 
 void UTArgumentTest(void) ;
 void UTOptionDefinitionTest(void) ;
+void UTCommandLineTest(void) ;
 
 void UTPrintArgument(CBArgument * src) ;
 

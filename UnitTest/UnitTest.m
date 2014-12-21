@@ -10,9 +10,11 @@
 static void printTestName(const char * name) ;
 
 int main(int argc, const char * argv[]) {
+	((void) argc) ; ((void) argv) ;
 	@autoreleasepool {
 		printTestName("CBArgument") ;		UTArgumentTest() ;
 		printTestName("CBOptionDefinition") ;	UTOptionDefinitionTest() ;
+		printTestName("CBCommandLine") ;	UTCommandLineTest() ;
 	}
     return 0;
 }

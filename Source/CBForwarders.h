@@ -5,5 +5,10 @@
  *   Copyright (C) 2014 Steel Wheels Project
  */
 
-@class CBError ;
+@class CBCommandLine ;
+@class CBOption ;
+@class CBArgument ;
+
 @class CBUnknownShortNameOptionError ;
+
+struct CBOptionDefinition ;

@@ -7,7 +7,6 @@
 
 #import <Coconut/Coconut.h>
 
-
 struct CBOptionDefinition {
 	NSUInteger		optionId ;
 	char			shortName ;
@@ -27,6 +26,6 @@ CBIsEndOfOptionDefinition(const struct CBOptionDefinition * src)
 	return src->optionId == CBNilOptionId ;
 }
 
-void
-CBPrintOptionDefinition(FILE * outfp, const struct CBOptionDefinition * src) ;
+CNText *
+CBOptionDefinitionToString(const struct CBOptionDefinition * src) ;
 

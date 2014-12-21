@@ -15,10 +15,11 @@
 		0505B2251A341D50002C5B84 /* CBOptionDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B21F1A341D50002C5B84 /* CBOptionDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0505B2261A341D50002C5B84 /* CBOptionDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B2201A341D50002C5B84 /* CBOptionDefinition.m */; };
 		0505B2281A346AF7002C5B84 /* CBForwarders.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B2271A346AF7002C5B84 /* CBForwarders.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0505B22B1A346D7F002C5B84 /* CBError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B22A1A346D7F002C5B84 /* CBError.m */; };
-		0505B22D1A346D9B002C5B84 /* CBError.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B22C1A346D9B002C5B84 /* CBError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0505B23C1A3478EF002C5B84 /* UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B23B1A3478EF002C5B84 /* UnitTest.m */; };
 		0505B2441A347926002C5B84 /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0505B2431A347926002C5B84 /* Cobalt.framework */; };
+		056186B01A3C6427004549ED /* UTCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 056186AF1A3C6427004549ED /* UTCommandLine.m */; };
+		056434141A38A28A0004D550 /* CBOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 056434121A38A28A0004D550 /* CBOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		056434151A38A28A0004D550 /* CBOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 056434131A38A28A0004D550 /* CBOption.m */; };
 		059D14241A37422A00EFAC6A /* UTOptionDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 059D14231A37422A00EFAC6A /* UTOptionDefinition.m */; };
 		05D5DB721A347AA000184D99 /* UTArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D5DB711A347AA000184D99 /* UTArgument.m */; };
 		05D5DB731A34843A00184D99 /* Cobalt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0505B2291A346B10002C5B84 /* Cobalt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,12 +71,13 @@
 		0505B2201A341D50002C5B84 /* CBOptionDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBOptionDefinition.m; path = ../Source/CBOptionDefinition.m; sourceTree = "<group>"; };
 		0505B2271A346AF7002C5B84 /* CBForwarders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBForwarders.h; path = ../Source/CBForwarders.h; sourceTree = "<group>"; };
 		0505B2291A346B10002C5B84 /* Cobalt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cobalt.h; path = ../Source/Cobalt.h; sourceTree = "<group>"; };
-		0505B22A1A346D7F002C5B84 /* CBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBError.m; path = ../Source/CBError.m; sourceTree = "<group>"; };
-		0505B22C1A346D9B002C5B84 /* CBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBError.h; path = ../Source/CBError.h; sourceTree = "<group>"; };
 		0505B2341A34786B002C5B84 /* install.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = install.mk; sourceTree = SOURCE_ROOT; };
 		0505B2391A3478EE002C5B84 /* UnitTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UnitTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0505B23B1A3478EF002C5B84 /* UnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UnitTest.m; path = ../UnitTest/UnitTest.m; sourceTree = SOURCE_ROOT; };
 		0505B2431A347926002C5B84 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = /Users/tomoo/Library/Frameworks/Cobalt.framework; sourceTree = "<absolute>"; };
+		056186AF1A3C6427004549ED /* UTCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UTCommandLine.m; path = ../UnitTest/UTCommandLine.m; sourceTree = SOURCE_ROOT; };
+		056434121A38A28A0004D550 /* CBOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBOption.h; path = ../Source/CBOption.h; sourceTree = "<group>"; };
+		056434131A38A28A0004D550 /* CBOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBOption.m; path = ../Source/CBOption.m; sourceTree = "<group>"; };
 		058F21F01A341BCE00D7B2D1 /* Cobalt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cobalt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		058F21F41A341BCE00D7B2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		059D14231A37422A00EFAC6A /* UTOptionDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UTOptionDefinition.m; path = ../UnitTest/UTOptionDefinition.m; sourceTree = SOURCE_ROOT; };
@@ -110,12 +112,12 @@
 				0505B2271A346AF7002C5B84 /* CBForwarders.h */,
 				0505B21D1A341D50002C5B84 /* CBCommandLine.h */,
 				0505B21E1A341D50002C5B84 /* CBCommandLine.m */,
+				056434121A38A28A0004D550 /* CBOption.h */,
+				056434131A38A28A0004D550 /* CBOption.m */,
 				0505B21F1A341D50002C5B84 /* CBOptionDefinition.h */,
 				0505B2201A341D50002C5B84 /* CBOptionDefinition.m */,
 				0505B21B1A341D50002C5B84 /* CBArgument.h */,
 				0505B21C1A341D50002C5B84 /* CBArgument.m */,
-				0505B22C1A346D9B002C5B84 /* CBError.h */,
-				0505B22A1A346D7F002C5B84 /* CBError.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 				0505B23B1A3478EF002C5B84 /* UnitTest.m */,
 				05D5DB711A347AA000184D99 /* UTArgument.m */,
 				059D14231A37422A00EFAC6A /* UTOptionDefinition.m */,
+				056186AF1A3C6427004549ED /* UTCommandLine.m */,
 				0505B2421A34790C002C5B84 /* Supporting Files */,
 			);
 			path = UnitTest;
@@ -184,12 +187,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056434141A38A28A0004D550 /* CBOption.h in Headers */,
 				05D5DB731A34843A00184D99 /* Cobalt.h in Headers */,
 				0505B2281A346AF7002C5B84 /* CBForwarders.h in Headers */,
 				0505B2211A341D50002C5B84 /* CBArgument.h in Headers */,
 				0505B2231A341D50002C5B84 /* CBCommandLine.h in Headers */,
 				0505B2251A341D50002C5B84 /* CBOptionDefinition.h in Headers */,
-				0505B22D1A346D9B002C5B84 /* CBError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +328,7 @@
 			files = (
 				0505B23C1A3478EF002C5B84 /* UnitTest.m in Sources */,
 				05D5DB721A347AA000184D99 /* UTArgument.m in Sources */,
+				056186B01A3C6427004549ED /* UTCommandLine.m in Sources */,
 				059D14241A37422A00EFAC6A /* UTOptionDefinition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,10 +337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056434151A38A28A0004D550 /* CBOption.m in Sources */,
 				0505B2241A341D50002C5B84 /* CBCommandLine.m in Sources */,
 				0505B2221A341D50002C5B84 /* CBArgument.m in Sources */,
 				0505B2261A341D50002C5B84 /* CBOptionDefinition.m in Sources */,
-				0505B22B1A346D7F002C5B84 /* CBError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +401,12 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-W",
+					"-Wall",
+				);
 			};
 			name = Debug;
 		};
@@ -408,7 +417,12 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Frameworks",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-W",
+					"-Wall",
+				);
 			};
 			name = Release;
 		};
