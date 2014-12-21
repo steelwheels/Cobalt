@@ -34,6 +34,9 @@ void UTCommandLineTest(void)
 	
 	const char * argv1[] = {"--opt1"} ;
 	commandLineTest(ARGNUM(argv1), argv1) ;
+	
+	const char * argv2[] = {"-a", "true", "--opt1", "-s", "--opt2", "1234", "arg"} ;
+	commandLineTest(ARGNUM(argv2), argv2) ;
 }
 
 static void

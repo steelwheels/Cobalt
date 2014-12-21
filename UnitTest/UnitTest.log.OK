@@ -52,3 +52,29 @@ CommandLine
  -> No such option
 -- print argument
 
+-- parseArguments: OK
+-- print command line info
+CommandLine
+    Options:
+          Option definition
+            -a bool: sample option 3
+          Value
+            true
+          Option definition
+            --opt1 -s : sample option 1
+          Option definition
+            --opt1 -s : sample option 1
+          Option definition
+            --opt2 size: sample option 2
+          Value
+            1234
+    Arguments:
+      arg
+-- Check option id 0
+ -> Found without argument
+-- Check option id 1
+ -> Found with argument "1234"
+-- Check option id 2
+ -> Found with argument "true"
+-- print argument
+arg
