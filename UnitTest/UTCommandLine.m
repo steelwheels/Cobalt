@@ -29,13 +29,13 @@ void UTCommandLineTest(void)
 {
 #	define ARGNUM(ARG)	(sizeof(ARG) / sizeof(const char *))
 	
-	const char * argv0[] = {"hello"} ;
+	const char * argv0[] = {"app0", "hello"} ;
 	commandLineTest(ARGNUM(argv0), argv0) ;
 	
-	const char * argv1[] = {"--opt1"} ;
+	const char * argv1[] = {"app1", "--opt1"} ;
 	commandLineTest(ARGNUM(argv1), argv1) ;
 	
-	const char * argv2[] = {"-a", "true", "--opt1", "-s", "--opt2", "1234", "arg"} ;
+	const char * argv2[] = {"app2", "-a", "true", "--opt1", "-s", "--opt2", "1234", "arg"} ;
 	commandLineTest(ARGNUM(argv2), argv2) ;
 }
 

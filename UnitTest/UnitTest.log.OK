@@ -26,6 +26,8 @@ argumentTest : count 4
 -- parseArguments: OK
 -- print command line info
 CommandLine
+    Application
+      app0
     Options:
     Arguments:
       hello
@@ -40,6 +42,8 @@ hello
 -- parseArguments: OK
 -- print command line info
 CommandLine
+    Application
+      app1
     Options:
           Option definition
             --opt1 -s : sample option 1
@@ -55,6 +59,8 @@ CommandLine
 -- parseArguments: OK
 -- print command line info
 CommandLine
+    Application
+      app2
     Options:
           Option definition
             -a bool: sample option 3

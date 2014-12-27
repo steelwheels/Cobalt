@@ -10,6 +10,8 @@
 
 @interface CBCommandLine : NSObject
 
+/** Name of the application */
+@property (strong, nonatomic) NSString * applicationName ;
 /** List of CBOption */
 @property (strong, nonatomic) CNList *	commandLineOptions ;
 /** List of NSString */

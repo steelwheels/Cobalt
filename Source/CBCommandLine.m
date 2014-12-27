@@ -14,6 +14,8 @@ static const BOOL LOCAL_DEBUG = false ;
 
 static NSError *
 parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, const struct CBOptionDefinition * optdefs) ;
+static NSError *
+invalidApplicationNameError(NSString * value) ;
 
 @implementation CBCommandLine
 
@@ -23,6 +25,7 @@ parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, c
 - (instancetype) init
 {
 	if((self = [super init]) != nil){
+		self.applicationName = @"" ;
 		self.commandLineOptions   = [[CNList alloc] init] ;
 		self.commandLineArguments = [[CNList alloc] init] ;
 	}
@@ -50,6 +53,12 @@ parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, c
 {
 	CNTextSection * text = [[CNTextSection alloc] initWithTitle: @"CommandLine"] ;
 	
+	CNTextSection * appsec = [[CNTextSection alloc] initWithTitle: @"Application"] ;
+	{
+		CNText * nametext = [[CNTextLine alloc] initWithString: self.applicationName] ;
+		[appsec appendChildText: nametext] ;
+	}
+	
 	CNTextSection * optsec = [[CNTextSection alloc] initWithTitle: @"Options:"] ;
 	const struct CNListItem * optitem ;
 	for(optitem = [self.commandLineOptions firstItem] ; optitem ; optitem = optitem->nextItem){
@@ -66,6 +75,7 @@ parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, c
 		[argsec appendChildText: line] ;
 	}
 	
+	[text appendChildText: appsec] ;
 	[text appendChildText: optsec] ;
 	[text appendChildText: argsec] ;
 	return text ;
@@ -77,6 +87,17 @@ parseOneArgument(CBCommandLine * cmdline, CBArgument * arg, CNList * nextargs, c
 	
 	CNList *	args = [CBArgument parseArguments: argv withCount: argc] ;
 	CBArgument *	arg ;
+	
+	/* get application name */
+	arg = (CBArgument *) [args popObject] ;
+	if(arg.type == CBNormalArgument){
+		cmdline.applicationName = arg.value ;
+	} else {
+		*error = invalidApplicationNameError(arg.value) ;
+		return nil ;
+	}
+	
+	/* get follower arguments */
 	while((arg = (CBArgument *) [args popObject]) != nil){
 		NSError * errret = parseOneArgument(cmdline, arg, args, optdefs) ;
 		if(errret){
@@ -188,6 +209,13 @@ static CNValue *
 decodeOption(CNValueType type, NSString * value, NSError ** error)
 {
 	return [CNValue stringToValue: value withType: type withError: error] ;
+}
+
+static NSError *
+invalidApplicationNameError(NSString * value)
+{
+	NSString * message = [[NSString alloc] initWithFormat: @"Invalud application name \"%s\"", [value UTF8String]] ;
+	return [NSError parseErrorWithMessage: message] ;
 }
 
 static NSError *
