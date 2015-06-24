@@ -26,11 +26,11 @@ argumentTest : count 4
 -- parseArguments: OK
 -- print command line info
 CommandLine
-    Application
-      app0
-    Options:
-    Arguments:
-      hello
+  Application
+    app0
+  Options:
+  Arguments:
+    hello
 -- Check option id 0
  -> No such option
 -- Check option id 1
@@ -42,12 +42,12 @@ hello
 -- parseArguments: OK
 -- print command line info
 CommandLine
-    Application
-      app1
-    Options:
-          Option definition
-            --opt1 -s : sample option 1
-    Arguments:
+  Application
+    app1
+  Options:
+    Option definition
+      --opt1 -s : sample option 1
+  Arguments:
 -- Check option id 0
  -> Found without argument
 -- Check option id 1
@@ -59,23 +59,23 @@ CommandLine
 -- parseArguments: OK
 -- print command line info
 CommandLine
-    Application
-      app2
-    Options:
-          Option definition
-            -a bool: sample option 3
-          Value
-            true
-          Option definition
-            --opt1 -s : sample option 1
-          Option definition
-            --opt1 -s : sample option 1
-          Option definition
-            --opt2 size: sample option 2
-          Value
-            1234
-    Arguments:
-      arg
+  Application
+    app2
+  Options:
+    Option definition
+      -a bool: sample option 3
+    Value
+      true
+    Option definition
+      --opt1 -s : sample option 1
+    Option definition
+      --opt1 -s : sample option 1
+    Option definition
+      --opt2 size: sample option 2
+    Value
+      1234
+  Arguments:
+    arg
 -- Check option id 0
  -> Found without argument
 -- Check option id 1
