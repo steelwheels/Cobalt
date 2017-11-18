@@ -12,7 +12,7 @@ This software depend on the following framework:
 
 ## Specifications
 ### Command line format
-The command line arguments are classified into following kinds
-  * --opt : Long name option. The "opt" matched with a word
-  * -o    : Short name option. The "o" matched with an alphabet
-  * word  : Normal argument. It is not option, This will be option parameter or command line argument
+The command line arguments are classified:
+  * --opt : *Long name option*. The "opt" matched with a word
+  * -o    : *Short name option*. The "o" matched with an alphabet. If multiple characters follows the option, the string except the 1st character is recognized as a option parameter. (ex. "-abc" is treated as "-a" option and parameter "bc" for it.)
+  * word  : *Normal argument*. It is not option, This will be option parameter or command line argument

@@ -5,9 +5,13 @@
  *   Copyright (C) 2017 Steel Wheels Project
  */
 
+import Canary
 import Foundation
 
-public enum CBError
+public enum CBError: Error
 {
 	case UnknownLongOptionName(name: String)
+	case UnknownShortOptionName(name: Character)
+	case TooFewParameter(optionType: CBOptionType)
+	case InvalidParameter(optionType: CBOptionType, argument: String)
 }

@@ -5,18 +5,30 @@
  *   Copyright (C) 2017 Steel Wheels Project
  */
 
+import Canary
 import Foundation
 
 open class CBArgument
 {
-	public var string: String = ""
+
 }
 
-public class CBOption: CBArgument
+public class CBOptionArgument: CBArgument
 {
 	public var optionType:	CBOptionType
+	public var parameters:	Array<CNValue>
 
 	public init(optionType otype: CBOptionType){
 		optionType	= otype
+		parameters 	= []
+	}
+}
+
+public class CBNormalArgument: CBArgument
+{
+	public var argument: String
+
+	public init(argument arg: String){
+		argument = arg
 	}
 }

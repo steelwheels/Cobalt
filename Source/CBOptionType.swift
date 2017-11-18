@@ -13,13 +13,15 @@ public class CBOptionType
 	public var shortName: 		Character?
 	public var longName:  		String?
 	public var parameterType:	CNValueType
-	public var description:		String
+	public var parameterNum:	Int
+	public var helpInfo:		String
 
-	public init(shortName sname: Character?, longName lname: String?, parameterType ptype: CNValueType, description desc:String){
+	public init(shortName sname: Character?, longName lname: String?, parameterType ptype: CNValueType, parameterNum pnum: Int, helpInfo help:String){
 		shortName	= sname
 		longName	= lname
 		parameterType	= ptype
-		description	= desc
+		parameterNum	= pnum
+		helpInfo	= help
 	}
 }
 
