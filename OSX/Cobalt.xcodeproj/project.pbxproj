@@ -10,6 +10,8 @@
 		0503E98C1FBF41760009551E /* CBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98B1FBF41760009551E /* CBParser.swift */; };
 		0503E98E1FBF420B0009551E /* CBTokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98D1FBF420B0009551E /* CBTokenParser.swift */; };
 		051AAC3F1FBDDD1B005AAE25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051AAC3E1FBDDD07005AAE25 /* Foundation.framework */; };
+		0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B21FC067C300B14C6A /* CBToken.swift */; };
+		0583D4B51FC06E4700B14C6A /* UTParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B41FC06E4700B14C6A /* UTParser.swift */; };
 		059CECE91FBB35DB0069B519 /* CBArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CECE81FBB35DB0069B519 /* CBArgument.swift */; };
 		059CECEB1FBB37A20069B519 /* CBOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CECEA1FBB37A20069B519 /* CBOptionType.swift */; };
 		059CECED1FBB39F90069B519 /* CBTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CECEC1FBB39F90069B519 /* CBTokenizer.swift */; };
@@ -68,6 +70,8 @@
 		0503E98B1FBF41760009551E /* CBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParser.swift; sourceTree = "<group>"; };
 		0503E98D1FBF420B0009551E /* CBTokenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTokenParser.swift; sourceTree = "<group>"; };
 		051AAC3E1FBDDD07005AAE25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0583D4B21FC067C300B14C6A /* CBToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToken.swift; sourceTree = "<group>"; };
+		0583D4B41FC06E4700B14C6A /* UTParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTParser.swift; sourceTree = "<group>"; };
 		058958001FBC8EBA00001947 /* UnitTest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		058958021FBC8EBA00001947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		059CECE81FBB35DB0069B519 /* CBArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBArgument.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				05D126C11FBC901200422640 /* main.swift */,
 				05D126CB1FBC975B00422640 /* UTTokenizer.swift */,
+				0583D4B41FC06E4700B14C6A /* UTParser.swift */,
 			);
 			path = UnitTest;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				05A3B2681FBA03AD0087367B /* Cobalt.h */,
 				059CECEA1FBB37A20069B519 /* CBOptionType.swift */,
 				059CECE81FBB35DB0069B519 /* CBArgument.swift */,
+				0583D4B21FC067C300B14C6A /* CBToken.swift */,
 				059CECF41FBB3D210069B519 /* CBError.swift */,
 				0503E98B1FBF41760009551E /* CBParser.swift */,
 				059CECEC1FBB39F90069B519 /* CBTokenizer.swift */,
@@ -358,6 +364,7 @@
 				0503E98C1FBF41760009551E /* CBParser.swift in Sources */,
 				059CECEB1FBB37A20069B519 /* CBOptionType.swift in Sources */,
 				059CECF51FBB3D210069B519 /* CBError.swift in Sources */,
+				0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05D126CC1FBC975B00422640 /* UTTokenizer.swift in Sources */,
+				0583D4B51FC06E4700B14C6A /* UTParser.swift in Sources */,
 				05D126C21FBC901200422640 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

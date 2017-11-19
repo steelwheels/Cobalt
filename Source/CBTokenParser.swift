@@ -46,13 +46,13 @@ private class CBTokenParser
 				switch token {
 				case .LongNameToken(let name):
 					if let opt = searchLongNameOption(optionName: name) {
-						try parseOption(optionType: opt, tokenStream: stream)
+						try parseOption(optionType: opt, withShortName: false, tokenStream: stream)
 					} else {
 						throw CBError.UnknownLongOptionName(name: name)
 					}
 				case .ShortNameToken(let name):
 					if let opt = searchShortNameOption(optionName: name) {
-						try parseOption(optionType: opt, tokenStream: stream)
+						try parseOption(optionType: opt, withShortName: true, tokenStream: stream)
 					} else {
 						throw CBError.UnknownShortOptionName(name: name)
 					}
@@ -83,29 +83,29 @@ private class CBTokenParser
 		return nil
 	}
 
-	private func parseOption(optionType opttype: CBOptionType, tokenStream stream: CNArrayStream<CBToken>) throws {
+	private func parseOption(optionType opttype: CBOptionType, withShortName withshort: Bool,tokenStream stream: CNArrayStream<CBToken>) throws {
 		let opt = CBOptionArgument(optionType: opttype)
 		results.append(opt)
 		for _ in 0..<opttype.parameterNum {
 			if let arg = stream.get() {
-				if let val = try decodeArgument(optionType: opttype, parameterType: opttype.parameterType, argument: arg) {
+				if let val = try decodeArgument(optionType: opttype, withShortName: withshort, parameterType: opttype.parameterType, argument: arg) {
 					opt.parameters.append(val)
 				}
 			} else {
-				throw CBError.TooFewParameter(optionType: opttype)
+				throw CBError.TooFewParameter(optionType: opttype, withShortName: withshort)
 			}
 		}
 	}
 
-	private func decodeArgument(optionType opttype: CBOptionType, parameterType ptype: CNValueType, argument arg: CBToken) throws -> CNValue? {
+	private func decodeArgument(optionType opttype: CBOptionType, withShortName withshort: Bool, parameterType ptype: CNValueType, argument arg: CBToken) throws -> CNValue? {
 		switch arg {
 		case .LongNameToken(_), .ShortNameToken(_):
-			throw CBError.TooFewParameter(optionType: opttype)
+			throw CBError.TooFewParameter(optionType: opttype, withShortName: withshort)
 		case .NormalToken(let str):
 			if let val = CNStringToValue(targetType: ptype, string: str) {
 				return val
 			} else {
-				throw CBError.InvalidParameter(optionType: opttype, argument: str)
+				throw CBError.InvalidParameter(optionType: opttype, withShortName: withshort, argument: str)
 			}
 		}
 	}

@@ -12,6 +12,45 @@ public enum CBError: Error
 {
 	case UnknownLongOptionName(name: String)
 	case UnknownShortOptionName(name: Character)
-	case TooFewParameter(optionType: CBOptionType)
-	case InvalidParameter(optionType: CBOptionType, argument: String)
+	case TooFewParameter(optionType: CBOptionType, withShortName: Bool)
+	case InvalidParameter(optionType: CBOptionType, withShortName: Bool, argument: String)
+
+	public var description: String {
+		get {
+			var result = "?"
+			switch self {
+			case .UnknownLongOptionName(let name):
+				result = "Unknown long option name: \(name)"
+			case .UnknownShortOptionName(let name):
+				result = "Unknown short option name: \(name)"
+			case .InvalidParameter(let opttype, let withshort, let arg):
+				let optname = optionName(optionType: opttype, withShortName: withshort)
+				result = "Invalid parameter \"\(arg)\" for option \"\(optname)\""
+			case .TooFewParameter(let opttype, let withshort):
+				let optname = optionName(optionType: opttype, withShortName: withshort)
+				result = "Too few parameter(s) for option \"\(optname)\""
+			}
+			return result
+		}
+	}
+
+	private func optionName(optionType opttype: CBOptionType, withShortName withshort: Bool) -> String {
+		var result: String
+		if withshort {
+			if let sname = opttype.shortName {
+				result = "\(sname)"
+			} else {
+				NSLog("Internal Error (1)")
+				result = "?"
+			}
+		} else {
+			if let lname = opttype.longName {
+				result = lname
+			} else {
+				NSLog("Internal Error (2)")
+				result = "?"
+			}
+		}
+		return result
+	}
 }

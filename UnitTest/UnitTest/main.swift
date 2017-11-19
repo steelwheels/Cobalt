@@ -9,8 +9,11 @@ import Cobalt
 import Canary
 import Foundation
 
-print("[Unit Test]")
 let console = CNFileConsole()
+console.print(string: "[Unit Test]\n")
 
 UTTokenizer(console: console)
+UTParser(console: console)
+
+console.print(string: "Bye\n\n")
 
