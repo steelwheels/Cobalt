@@ -27,12 +27,7 @@ public class CBOptionArgument: CBArgument
 
 	public override var description: String {
 		get {
-			var result: String = ""
-			if let lname = optionType.longName {
-				result += "--\(lname)"
-			} else if let sname = optionType.shortName {
-				result += "-\(sname)"
-			}
+			var result: String = optionType.optionDescription
 			for param in parameters {
 				result += " " + param.description
 			}

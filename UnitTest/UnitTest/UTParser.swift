@@ -11,8 +11,8 @@ import Foundation
 
 public func UTParser(console cons: CNConsole)
 {
-	let verbose_opt	= CBOptionType(shortName: nil, longName: "verbose", parameterNum: 0, parameterType: .VoidType, helpInfo: "print verbose message")
-	let file_opt	= CBOptionType(shortName: "f", longName: "file", parameterNum: 1, parameterType: .StringType, helpInfo: "file name")
+	let verbose_opt	= CBOptionType(optionId:0 , shortName: nil, longName: "verbose", parameterNum: 0, parameterType: .VoidType, helpInfo: "print verbose message")
+	let file_opt	= CBOptionType(optionId:1, shortName: "f", longName: "file", parameterNum: 1, parameterType: .StringType, helpInfo: "file name")
 	let opts = [verbose_opt, file_opt]
 
 	parseTest(optionTypes: opts, arguments: ["a", "b"], console: cons)
