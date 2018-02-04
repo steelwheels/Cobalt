@@ -10,15 +10,20 @@ import Foundation
 
 public enum CBError: Error
 {
+	case InternalError(place: String)
 	case UnknownLongOptionName(name: String)
 	case UnknownShortOptionName(name: Character)
 	case TooFewParameter(optionType: CBOptionType, withShortName: Bool)
 	case InvalidParameter(optionType: CBOptionType, withShortName: Bool, argument: String)
+	case NoSubCommand
+	case UnknownSubCommand(name: String)
 
 	public var description: String {
 		get {
 			var result = "?"
 			switch self {
+			case .InternalError(let place):
+				result = "Internal error: \(place)"
 			case .UnknownLongOptionName(let name):
 				result = "Unknown long option name: \(name)"
 			case .UnknownShortOptionName(let name):
@@ -29,6 +34,10 @@ public enum CBError: Error
 			case .TooFewParameter(let opttype, let withshort):
 				let optname = optionName(optionType: opttype, withShortName: withshort)
 				result = "Too few parameter(s) for option \"\(optname)\""
+			case .NoSubCommand:
+				result = "Sub command is required but it is not given"
+			case .UnknownSubCommand(let cmdname):
+				result = "Unknown sub command: \"\(cmdname)\""
 			}
 			return result
 		}

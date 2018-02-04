@@ -17,6 +17,8 @@ public func UTParser(console cons: CNConsole)
 
 	parseTest(optionTypes: opts, arguments: ["a", "b"], console: cons)
 	parseTest(optionTypes: opts, arguments: ["-fa", "-f", "b", "--file", "c"], console: cons)
+	parseCommandTest(command: "file", optionTypes: opts, arguments: ["file", "-fa", "-f", "b", "--file", "c"], console: cons)
+	parseCommandTest(command: "file", optionTypes: opts, arguments: ["--help"], console: cons)
 }
 
 private func parseTest(optionTypes opttypes : Array<CBOptionType>, arguments args: Array<String>, console cons: CNConsole)
@@ -34,15 +36,56 @@ private func parseTest(optionTypes opttypes : Array<CBOptionType>, arguments arg
 	}
 	console.print(string: "] -> ")
 
+	/* allocate config */
+	let config = CBParserConfig(hasSubCommand: false)
+	config.setDefaultOptions(optionTypes: opttypes)
+
 	/* parse argument */
-	let (error, results) = CBParseArguments(optionTypes: opttypes, arguments:  args)
+	let (error, command, results) = CBParseArguments(parserConfig: config, arguments:  args)
 	if let e = error {
 		console.print(string: "[Error] \(e.description)\n")
 	} else {
+		let cmdstr: String
+		if let c = command {
+			cmdstr = c
+		} else {
+			cmdstr = "nil"
+		}
+
 		var cmdline = ""
 		for result in results {
 			cmdline += result.description + " "
 		}
-		console.print(string: "[Result] " + cmdline + "\n")
+		console.print(string: "[Result] command=\(cmdstr), args=[" + cmdline + "]\n")
 	}
 }
+
+private func parseCommandTest(command cmd: String, optionTypes opttypes : Array<CBOptionType>, arguments args: Array<String>, console cons: CNConsole)
+{
+	let help_opt	= CBOptionType(optionId:0 , shortName: nil, longName: "help", parameterNum: 0, parameterType: .VoidType, helpInfo: "print help message")
+
+	/* allocate config */
+	let config = CBParserConfig(hasSubCommand: true)
+	config.addSubCommand(commandName: cmd, optionTypes: opttypes)
+	config.setDefaultOptions(optionTypes: [help_opt])
+
+	/* parse argument */
+	let (error, command, results) = CBParseArguments(parserConfig: config, arguments: args)
+	if let e = error {
+		console.print(string: "[Error] \(e.description)\n")
+	} else {
+		let cmdstr: String
+		if let c = command {
+			cmdstr = c
+		} else {
+			cmdstr = "nil"
+		}
+
+		var cmdline = ""
+		for result in results {
+			cmdline += result.description + " "
+		}
+		console.print(string: "[Result] command=\(cmdstr), args=[" + cmdline + "]\n")
+	}
+}
+

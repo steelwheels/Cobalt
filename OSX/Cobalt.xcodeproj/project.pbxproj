@@ -11,6 +11,7 @@
 		0503E98E1FBF420B0009551E /* CBTokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98D1FBF420B0009551E /* CBTokenParser.swift */; };
 		0533D6E51FEFA87200DF4039 /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0533D6E41FEFA87200DF4039 /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0533D6E71FEFAA8B00DF4039 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05472D002026AEAD005A5383 /* CBParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05472CFF2026AEAD005A5383 /* CBParserConfig.swift */; };
 		0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B21FC067C300B14C6A /* CBToken.swift */; };
 		0583D4B51FC06E4700B14C6A /* UTParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B41FC06E4700B14C6A /* UTParser.swift */; };
 		059CECE91FBB35DB0069B519 /* CBArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CECE81FBB35DB0069B519 /* CBArgument.swift */; };
@@ -23,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05472D052026BD33005A5383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A3B25C1FBA03AD0087367B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D126BE1FBC901200422640;
+			remoteInfo = UnitTest;
+		};
 		058958061FBC8EC600001947 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05A3B25C1FBA03AD0087367B /* Project object */;
@@ -74,6 +82,7 @@
 		0503E98D1FBF420B0009551E /* CBTokenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTokenParser.swift; sourceTree = "<group>"; };
 		0533D6E41FEFA87200DF4039 /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
 		0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
+		05472CFF2026AEAD005A5383 /* CBParserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParserConfig.swift; sourceTree = "<group>"; };
 		0583D4B21FC067C300B14C6A /* CBToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToken.swift; sourceTree = "<group>"; };
 		0583D4B41FC06E4700B14C6A /* UTParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTParser.swift; sourceTree = "<group>"; };
 		058958001FBC8EBA00001947 /* UnitTest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				05A3B2681FBA03AD0087367B /* Cobalt.h */,
+				05472CFF2026AEAD005A5383 /* CBParserConfig.swift */,
 				059CECEA1FBB37A20069B519 /* CBOptionType.swift */,
 				059CECE81FBB35DB0069B519 /* CBArgument.swift */,
 				0583D4B21FC067C300B14C6A /* CBToken.swift */,
@@ -211,6 +221,21 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXLegacyTarget section */
+		05472D012026BD29005A5383 /* TestExec */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f ../Script/unit_test.mk";
+			buildConfigurationList = 05472D022026BD29005A5383 /* Build configuration list for PBXLegacyTarget "TestExec" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+				05472D062026BD33005A5383 /* PBXTargetDependency */,
+			);
+			name = TestExec;
+			passBuildSettingsInEnvironment = 1;
+			productName = TestExec;
+		};
 		059CECEE1FBB3B2C0069B519 /* Install */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "-f ../Script/install_osx.mk";
@@ -294,6 +319,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
+					05472D012026BD29005A5383 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					058957FF1FBC8EBA00001947 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -329,6 +358,7 @@
 				059CECEE1FBB3B2C0069B519 /* Install */,
 				058957FF1FBC8EBA00001947 /* UnitTestBundle */,
 				05D126BE1FBC901200422640 /* UnitTest */,
+				05472D012026BD29005A5383 /* TestExec */,
 			);
 		};
 /* End PBXProject section */
@@ -369,6 +399,7 @@
 				059CECEB1FBB37A20069B519 /* CBOptionType.swift in Sources */,
 				059CECF51FBB3D210069B519 /* CBError.swift in Sources */,
 				0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */,
+				05472D002026AEAD005A5383 /* CBParserConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +416,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05472D062026BD33005A5383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D126BE1FBC901200422640 /* UnitTest */;
+			targetProxy = 05472D052026BD33005A5383 /* PBXContainerItemProxy */;
+		};
 		058958071FBC8EC600001947 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 059CECEE1FBB3B2C0069B519 /* Install */;
@@ -403,6 +439,33 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		05472D032026BD29005A5383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05472D042026BD29005A5383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TR2DNF3P93;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		058958031FBC8EBA00001947 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -682,6 +745,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05472D022026BD29005A5383 /* Build configuration list for PBXLegacyTarget "TestExec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05472D032026BD29005A5383 /* Debug */,
+				05472D042026BD29005A5383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		058958051FBC8EBA00001947 /* Build configuration list for PBXNativeTarget "UnitTestBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
