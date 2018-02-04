@@ -11,6 +11,13 @@ This software depend on the following framework:
 * [Canary Framework](https://github.com/steelwheels/Canary)
 
 ## Specifications
+### Sub command support
+The configuration of command line parser is defined by `CBParserConfig` class. It supports sub command on the command line arguments.
+This is syntax of command line which has sub command.
+````
+command sub-command [options] [arguments]
+````
+
 ### Command line format
 The command line arguments are classified:
   * --opt : *Long name option*. The "opt" matched with a word
