@@ -22,7 +22,7 @@ The command line arguments are classified:
 
 ## Required software
   This software depend on the following framework:
-  * [Canary Framework](https://github.com/steelwheels/Canary)
+  * [Coconut Frameworks](https://github.com/steelwheels/Coconut/blob/master/README.md)
 
 ## Related Links
 * [Steel Wheels Project](http://steelwheels.github.io): Main page of this project

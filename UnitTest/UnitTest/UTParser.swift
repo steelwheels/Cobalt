@@ -6,7 +6,7 @@
  */
 
 import Cobalt
-import Canary
+import CoconutData
 import Foundation
 
 public func UTParser(console cons: CNConsole)

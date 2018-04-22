@@ -6,7 +6,7 @@
  */
 
 import Cobalt
-import Canary
+import CoconutData
 import Foundation
 
 let console = CNFileConsole()

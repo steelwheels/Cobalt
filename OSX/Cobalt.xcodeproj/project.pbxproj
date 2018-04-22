@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0503E98C1FBF41760009551E /* CBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98B1FBF41760009551E /* CBParser.swift */; };
 		0503E98E1FBF420B0009551E /* CBTokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98D1FBF420B0009551E /* CBTokenParser.swift */; };
-		0533D6E51FEFA87200DF4039 /* Canary.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0533D6E41FEFA87200DF4039 /* Canary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0533D6E71FEFAA8B00DF4039 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05472D002026AEAD005A5383 /* CBParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05472CFF2026AEAD005A5383 /* CBParserConfig.swift */; };
 		0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B21FC067C300B14C6A /* CBToken.swift */; };
@@ -71,7 +70,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0533D6E71FEFAA8B00DF4039 /* Cobalt.framework in CopyFiles */,
-				0533D6E51FEFA87200DF4039 /* Canary.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +78,6 @@
 /* Begin PBXFileReference section */
 		0503E98B1FBF41760009551E /* CBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParser.swift; sourceTree = "<group>"; };
 		0503E98D1FBF420B0009551E /* CBTokenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTokenParser.swift; sourceTree = "<group>"; };
-		0533D6E41FEFA87200DF4039 /* Canary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Canary.framework; path = ../../../Library/Frameworks/Canary.framework; sourceTree = "<group>"; };
 		0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05472CFF2026AEAD005A5383 /* CBParserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParserConfig.swift; sourceTree = "<group>"; };
 		0583D4B21FC067C300B14C6A /* CBToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToken.swift; sourceTree = "<group>"; };
@@ -143,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */,
-				0533D6E41FEFA87200DF4039 /* Canary.framework */,
 				05D89D2E1FBA03EA007009C8 /* Source */,
 				05D126BA1FBC8F0D00422640 /* UnitTest */,
 				05A3B2671FBA03AD0087367B /* OSX */,
@@ -316,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Tomoo Hamada";
 				TargetAttributes = {
 					05472D012026BD29005A5383 = {
@@ -553,6 +549,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -560,6 +557,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -613,6 +611,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -620,6 +619,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
