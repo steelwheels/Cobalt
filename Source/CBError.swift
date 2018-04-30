@@ -18,6 +18,10 @@ public enum CBError: Error
 	case NoSubCommand
 	case UnknownSubCommand(name: String)
 
+	public func toObject() -> NSError {
+		return NSError.parseError(message: self.description)
+	}
+
 	public var description: String {
 		get {
 			var result = "?"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public func CBParseArguments(parserConfig config: CBParserConfig, arguments args: Array<String>) -> (CBError?, String?, Array<CBArgument>)
+public func CBParseArguments(parserConfig config: CBParserConfig, arguments args: Array<String>) -> (NSError?, String?, Array<CBArgument>)
 {
 	let tokens = CBTokenizeArguments(arguments: args)
 
@@ -23,10 +23,10 @@ public func CBParseArguments(parserConfig config: CBParserConfig, arguments args
 						var subtokens = tokens
 						subtokens.removeFirst()
 						let (err, args) = CBParseToken(tokens: subtokens, optionTypes: opttypes)
-						return (err, command, args)
+						return (errorToObject(error: err), command, args)
 					} else {
 						let err: CBError = .InternalError(place: "CBParseArguments")
-						return (err, nil, [])
+						return (errorToObject(error: err), nil, [])
 					}
 				} else {
 					return (nil, command, [])
@@ -34,21 +34,30 @@ public func CBParseArguments(parserConfig config: CBParserConfig, arguments args
 			}
 		} else {
 			let err: CBError = .NoSubCommand
-			return (err, nil, [])
+			return (errorToObject(error: err), nil, [])
 		}
 	} else {
 		return parseDefaultOptions(parserConfig: config, tokens: tokens)
 	}
 }
 
-private func parseDefaultOptions(parserConfig config: CBParserConfig, tokens srctkns: Array<CBToken>) -> (CBError?, String?, Array<CBArgument>)
+private func parseDefaultOptions(parserConfig config: CBParserConfig, tokens srctkns: Array<CBToken>) -> (NSError?, String?, Array<CBArgument>)
 {
 	if let opttypes = config.defaultOptionTypes() {
 		let (err, args) = CBParseToken(tokens: srctkns, optionTypes: opttypes)
-		return (err, nil, args)
+		return (errorToObject(error: err), nil, args)
 	} else {
 		let err: CBError = .InternalError(place: "parseDefaultOptions")
-		return (err, nil, [])
+		return (errorToObject(error: err), nil, [])
 	}
 }
+
+private func errorToObject(error err: CBError?) -> NSError? {
+	if let e = err {
+		return e.toObject()
+	} else {
+		return nil
+	}
+}
+
 
