@@ -3,9 +3,12 @@
 [a b c ] ... N(a b c) 
 [-fa ] ... S(f) N(a) 
 [--file file-a ] ... L(file) N(file-a) 
-[a, b] -> [Result] command=nil, args=[a b ]
-[-fa, -f, b, --file, c] -> [Result] command=nil, args=[--file a --file b --file c ]
-[Result] command=file, args=[--file a --file b --file c ]
-[Result] command=nil, args=[--help ]
+[a -b -- c --de ] ... N(a) S(b) [U(c) U(--de) ]
+[a, b] -> [Result] command=nil, args=[a b ], subargs=[]
+[-fa, -f, b, --file, c] -> [Result] command=nil, args=[--file a --file b --file c ], subargs=[]
+[-NSDocumentRevisionsDebugMode, YES, a, b] -> [Result] command=nil, args=[a b ], subargs=[]
+[Result] command=file, args=[--file a --file b --file c ] + subargs=[]
+[Result] command=file, args=[--file a ] + subargs=[b --file c ]
+[Result] command=nil, args=[--help ] + subargs=[]
 Bye
 

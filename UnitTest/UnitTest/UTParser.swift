@@ -17,7 +17,9 @@ public func UTParser(console cons: CNConsole)
 
 	parseTest(optionTypes: opts, arguments: ["a", "b"], console: cons)
 	parseTest(optionTypes: opts, arguments: ["-fa", "-f", "b", "--file", "c"], console: cons)
+	parseTest(optionTypes: opts, arguments: ["-NSDocumentRevisionsDebugMode", "YES", "a", "b"], console: cons)
 	parseCommandTest(command: "file", optionTypes: opts, arguments: ["file", "-fa", "-f", "b", "--file", "c"], console: cons)
+	parseCommandTest(command: "file", optionTypes: opts, arguments: ["file", "-fa", "--", "b", "--file", "c"], console: cons)
 	parseCommandTest(command: "file", optionTypes: opts, arguments: ["--help"], console: cons)
 }
 
@@ -41,7 +43,7 @@ private func parseTest(optionTypes opttypes : Array<CBOptionType>, arguments arg
 	config.setDefaultOptions(optionTypes: opttypes)
 
 	/* parse argument */
-	let (error, command, results) = CBParseArguments(parserConfig: config, arguments:  args)
+	let (error, command, results, subargs) = CBParseArguments(parserConfig: config, arguments:  args)
 	if let e = error {
 		console.print(string: "[Error] \(e.description)\n")
 	} else {
@@ -56,7 +58,12 @@ private func parseTest(optionTypes opttypes : Array<CBOptionType>, arguments arg
 		for result in results {
 			cmdline += result.description + " "
 		}
-		console.print(string: "[Result] command=\(cmdstr), args=[" + cmdline + "]\n")
+
+		var substr = ""
+		for subarg in subargs {
+			substr += subarg + " "
+		}
+		console.print(string: "[Result] command=\(cmdstr), args=[\(cmdline)], subargs=[\(substr)]\n")
 	}
 }
 
@@ -70,7 +77,7 @@ private func parseCommandTest(command cmd: String, optionTypes opttypes : Array<
 	config.setDefaultOptions(optionTypes: [help_opt])
 
 	/* parse argument */
-	let (error, command, results) = CBParseArguments(parserConfig: config, arguments: args)
+	let (error, command, results, subargs) = CBParseArguments(parserConfig: config, arguments: args)
 	if let e = error {
 		console.print(string: "[Error] \(e.description)\n")
 	} else {
@@ -85,7 +92,12 @@ private func parseCommandTest(command cmd: String, optionTypes opttypes : Array<
 		for result in results {
 			cmdline += result.description + " "
 		}
-		console.print(string: "[Result] command=\(cmdstr), args=[" + cmdline + "]\n")
+
+		var substr = ""
+		for subarg in subargs {
+			substr += subarg + " "
+		}
+		console.print(string: "[Result] command=\(cmdstr), args=[\(cmdline)] + subargs=[\(substr)]\n")
 	}
 }
 

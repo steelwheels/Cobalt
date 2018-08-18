@@ -8,21 +8,29 @@
 import CoconutData
 import Foundation
 
-public func CBTokenizeArguments(arguments args: Array<String>) -> Array<CBToken>
+public func CBTokenizeArguments(arguments args: Array<String>) -> (Array<CBToken>, Array<String>)
 {
-	let parser = CBTokenizer()
+	let parser     			= CBTokenizer()
+	var terminated 			= false
+	var subargs: Array<String> 	= []
 	for arg in args {
-		parser.parse(argument: arg)
+		if !terminated {
+			parser.parse(argument: arg)
+		} else {
+			subargs.append(arg)
+		}
+		terminated = parser.terminated
 	}
-	return parser.result
+	return (parser.result, subargs)
 }
 
 private class CBTokenizer
 {
-	public var	result: Array<CBToken>
-
+	public var	result: 	Array<CBToken>
+	public var	terminated:	 Bool
 	public init(){
-		result	= []
+		result	   = []
+		terminated = false
 	}
 
 	public func parse(argument arg: String) {
@@ -58,7 +66,13 @@ private class CBTokenizer
 				if let str = streamToString(stream: stream){
 					result.append(CBToken.LongNameToken(name: str))
 				}
+			} else if c0.isSpace() {
+				stream.skip(count: 2) // drop 1st and 2nd "-"
+				terminated = true
 			}
+		} else {
+			stream.skip(count: 2) // drop 1st and 2nd "-"
+			terminated = true
 		}
 	}
 
