@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0503E98C1FBF41760009551E /* CBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98B1FBF41760009551E /* CBParser.swift */; };
 		0503E98E1FBF420B0009551E /* CBTokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503E98D1FBF420B0009551E /* CBTokenParser.swift */; };
-		0533D6E71FEFAA8B00DF4039 /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05472D002026AEAD005A5383 /* CBParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05472CFF2026AEAD005A5383 /* CBParserConfig.swift */; };
+		057BFD4021B3D4BF00FE9F8E /* Cobalt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05A3B2651FBA03AD0087367B /* Cobalt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0583D4B31FC067C300B14C6A /* CBToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B21FC067C300B14C6A /* CBToken.swift */; };
 		0583D4B51FC06E4700B14C6A /* UTParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D4B41FC06E4700B14C6A /* UTParser.swift */; };
 		059CECE91FBB35DB0069B519 /* CBArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CECE81FBB35DB0069B519 /* CBArgument.swift */; };
@@ -69,7 +69,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0533D6E71FEFAA8B00DF4039 /* Cobalt.framework in CopyFiles */,
+				057BFD4021B3D4BF00FE9F8E /* Cobalt.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,6 @@
 /* Begin PBXFileReference section */
 		0503E98B1FBF41760009551E /* CBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParser.swift; sourceTree = "<group>"; };
 		0503E98D1FBF420B0009551E /* CBTokenParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTokenParser.swift; sourceTree = "<group>"; };
-		0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = ../../../Library/Frameworks/Cobalt.framework; sourceTree = "<group>"; };
 		05472CFF2026AEAD005A5383 /* CBParserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBParserConfig.swift; sourceTree = "<group>"; };
 		0583D4B21FC067C300B14C6A /* CBToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToken.swift; sourceTree = "<group>"; };
 		0583D4B41FC06E4700B14C6A /* UTParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTParser.swift; sourceTree = "<group>"; };
@@ -139,7 +138,6 @@
 		05A3B25B1FBA03AD0087367B = {
 			isa = PBXGroup;
 			children = (
-				0533D6E61FEFAA8B00DF4039 /* Cobalt.framework */,
 				05D89D2E1FBA03EA007009C8 /* Source */,
 				05D126BA1FBC8F0D00422640 /* UnitTest */,
 				05A3B2671FBA03AD0087367B /* OSX */,
@@ -586,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -643,7 +641,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
