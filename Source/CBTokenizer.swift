@@ -61,12 +61,12 @@ private class CBTokenizer
 	public func parseLongOption(argument stream: CNStringStream) {
 		/* 1st and 2nd char is "-" */
 		if let c0 = stream.peek(offset: 2) {
-			if c0.isAlpha() {
+			if c0.isLetter {
 				stream.skip(count: 2) // drop 1st and 2nd "-"
 				if let str = streamToString(stream: stream){
 					result.append(CBToken.LongNameToken(name: str))
 				}
-			} else if c0.isSpace() {
+			} else if c0.isWhitespace {
 				stream.skip(count: 2) // drop 1st and 2nd "-"
 				terminated = true
 			}
@@ -79,7 +79,7 @@ private class CBTokenizer
 	public func parseShortOption(argument stream: CNStringStream) {
 		/* 1st char is "-"  */
 		if let c0 = stream.peek(offset: 1) {
-			if c0.isAlpha() {
+			if c0.isLetter {
 				result.append(CBToken.ShortNameToken(name: c0))
 				stream.skip(count: 2) // drop 1st "-" and 2nd alphabet
 				if let str = streamToString(stream: stream) {
@@ -110,7 +110,7 @@ private class CBTokenizer
 		var docont = true
 		while docont {
 			if let c = strm.getc() {
-				if !c.isSpace() {
+				if !c.isWhitespace {
 					let _ = strm.ungetc()
 					docont = false
 				}
