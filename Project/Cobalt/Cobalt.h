@@ -1,11 +1,11 @@
-/**
- * @file	Cobalt.h
- * @brief	Bridge header for Objective-C
- * @par Copyright
- *   Copyright (C) 2017 Steel Wheels Project
- */
+//
+//  Cobalt.h
+//  Cobalt
+//
+//  Created by Tomoo Hamada on 2020/09/21.
+//
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Cobalt.
 FOUNDATION_EXPORT double CobaltVersionNumber;
