@@ -53,14 +53,14 @@ public enum CBError: Error
 			if let sname = opttype.shortName {
 				result = "\(sname)"
 			} else {
-				NSLog("Internal Error (1)")
+				CNLog(logLevel: .error, message: "No short name", atFunction: #function, inFile: #file)
 				result = "?"
 			}
 		} else {
 			if let lname = opttype.longName {
 				result = lname
 			} else {
-				NSLog("Internal Error (2)")
+				CNLog(logLevel: .error, message: "No long name", atFunction: #function, inFile: #file)
 				result = "?"
 			}
 		}
