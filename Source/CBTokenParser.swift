@@ -97,12 +97,12 @@ private class CBTokenParser
 		}
 	}
 
-	private func decodeArgument(optionType opttype: CBOptionType, withShortName withshort: Bool, parameterType ptype: CNValueType, argument arg: CBToken) throws -> CNValue? {
+	private func decodeArgument(optionType opttype: CBOptionType, withShortName withshort: Bool, parameterType ptype: CBValueType, argument arg: CBToken) throws -> CBValue? {
 		switch arg {
 		case .LongNameToken(_), .ShortNameToken(_):
 			throw CBError.TooFewParameter(optionType: opttype, withShortName: withshort)
 		case .NormalToken(let str):
-			if let val = CNStringToValue(targetType: ptype, string: str) {
+			if let val = CBStringToValue(type: ptype, string: str) {
 				return val
 			} else {
 				throw CBError.InvalidParameter(optionType: opttype, withShortName: withshort, argument: str)

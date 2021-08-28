@@ -18,7 +18,7 @@ open class CBArgument
 public class CBOptionArgument: CBArgument
 {
 	public var optionType:	CBOptionType
-	public var parameters:	Array<CNValue>
+	public var parameters:	Array<CBValue>
 
 	public init(optionType otype: CBOptionType){
 		optionType	= otype

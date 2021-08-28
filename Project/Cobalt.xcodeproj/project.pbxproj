@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		052FC0D6254CEC09008407B2 /* Cobalt.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FA81FC25188C7000198BE7 /* Cobalt.xcframework */; };
 		052FC0D8254CEC09008407B2 /* CoconutData.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D9D9C425186A93003935FE /* CoconutData.xcframework */; };
+		057F71F626D9B46800366817 /* CBValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F71F526D9B46800366817 /* CBValue.swift */; };
 		05D9D9AC25186A4B003935FE /* Cobalt.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D9D9AA25186A4B003935FE /* Cobalt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D9D9BA25186A6B003935FE /* CBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D9D9B225186A6B003935FE /* CBParser.swift */; };
 		05D9D9BB25186A6B003935FE /* CBToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D9D9B325186A6B003935FE /* CBToken.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		057F71F526D9B46800366817 /* CBValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBValue.swift; sourceTree = "<group>"; };
 		05D9D9A725186A4B003935FE /* Cobalt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cobalt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D9D9AA25186A4B003935FE /* Cobalt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cobalt.h; sourceTree = "<group>"; };
 		05D9D9AB25186A4B003935FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				05D9D9B325186A6B003935FE /* CBToken.swift */,
 				05D9D9B425186A6B003935FE /* CBTokenizer.swift */,
 				05D9D9B725186A6B003935FE /* CBTokenParser.swift */,
+				057F71F526D9B46800366817 /* CBValue.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -275,7 +278,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					05D9D9A625186A4B003935FE = {
 						CreatedOnToolsVersion = 12.0;
@@ -335,6 +338,7 @@
 				05D9D9C125186A6B003935FE /* CBArgument.swift in Sources */,
 				05D9D9BC25186A6B003935FE /* CBTokenizer.swift in Sources */,
 				05D9D9BE25186A6B003935FE /* CBOptionType.swift in Sources */,
+				057F71F626D9B46800366817 /* CBValue.swift in Sources */,
 				05D9D9BA25186A6B003935FE /* CBParser.swift in Sources */,
 				05D9D9BD25186A6B003935FE /* CBParserConfig.swift in Sources */,
 			);
@@ -553,7 +557,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
