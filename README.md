@@ -4,6 +4,7 @@
 The cobalt framework is used to analyze command line options and arguments for console application
 
 ## Copyright
+Copyright (C) 2018-2022 [Steel Wheels Project](https://github.com/steelwheels).
 This software is distributed under [GNU LESSER GENERAL PUBLIC LICENSE Version 2.1](https://www.gnu.org/licenses/lgpl-2.1-standalone.html).
 
 ## Features
